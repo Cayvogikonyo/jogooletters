@@ -23,6 +23,7 @@ def destroy
 	@article = Article.find(params[:id])
 	@article.destroy
 	@articles = Article.all
+	
 
 	flash.notice = "Article Deleted"
 
