@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
 include ArticlesHelper
+
+ before_action :require_login, except: [:index, :show]
+
 def index
   @articles = Article.all
 end
@@ -10,11 +13,12 @@ def show
 end
 def new
 	@article = Article.new
+	@tags = Tag.all.map {|t| [t.name] }
+
 end
 def create
 	@article = Article.new(article_params)
 	@article.save
-
 	flash.notice = "Article '#{@article.title}' has Been Created."
 
 	redirect_to article_path(@article)
@@ -31,6 +35,8 @@ def destroy
 end
 def edit
 	@article = Article.find(params[:id])
+	@tags = Tag.all.map {|t| [t.name] }
+
 
 end
 def update
