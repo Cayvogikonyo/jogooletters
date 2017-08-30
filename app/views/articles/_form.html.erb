@@ -25,6 +25,9 @@
 		<%= f.file_field :image %>
 	</p>
 	<p>
+		<%= collection_select(:article, :category_id, @categories, :id, :name, {:prompt => "Select One" })%>
+	</p>
+	<p>
 		<%= f.submit %>
 	</p>
 

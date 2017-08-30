@@ -1,0 +1,8 @@
+<ul class="nav">
+	<%= link_to "Home", root_path %>
+	<%= link_to "All articles", articles_path %>
+	<%= link_to "Tags", tags_path %>
+	<% if logged_in? %>
+	<%= link_to "Authors", authors_path %>
+    <% end %>
+ </ul>
