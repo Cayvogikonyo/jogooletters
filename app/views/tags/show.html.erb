@@ -1,5 +1,6 @@
+<div class="wrapper">
 <h1> <%= @tag.name %></h1>
-
+</div>
 <ul>
 	<% @tag.articles.each do |article| %>
 		<li> <%= link_to article.title, article_path(article) %> </li>

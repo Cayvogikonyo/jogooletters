@@ -8,6 +8,9 @@ end
 
 def index
   @categories = Category.all
+ 
+  @articles = Article.order(created_at: :desc).limit(5)
+  
 end
 
 def new

@@ -1,8 +1,12 @@
-<h1> <%= @category.name %></h1>
-
-<ul>
+<div class="wrapper"><h1> <%= @category.name %></h1></div>
+<br>
+<div id="category-articles" style="text-align: left;">
+<ul class="articles-list" id="articles">
 	<% @category.articles.each do |article| %>
-		<li> <%= link_to article.title, article_path(article) %> </li>
+		<li> <%= link_to article.title, article_path(article), class: 'article_title', id: "article_#{article.id}" %> </li>
 	<% end %>
 </ul>
-<%= link_to "delete", category_path(@category), method: :delete, data: {confirm: "Do you want to delete the article?"} %><br>
+<!--<% if logged_in? %>
+<%= link_to "delete", category_path(@category), method: :delete, data: {confirm: "Do you want to delete the category?"} %><br>
+<% end %>-->
+</div>

@@ -4,7 +4,8 @@ include ArticlesHelper
  before_action :require_login, except: [:index, :show]
 
 def index
-  @articles = Article.all
+  @articles = Article.all.order(created_at: :desc)
+  @articles_by_month = Article.all.order(created_at: :desc).group_by { |article| article.created_at.beginning_of_month }
 end
 def show
 	@article = Article.find(params[:id])

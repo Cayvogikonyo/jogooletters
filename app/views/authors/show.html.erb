@@ -1,0 +1,13 @@
+<h1> <%= @author.username %></h1>
+
+<div class="beta">
+<div >
+<ul>
+	<% @author.each do |author| %>
+		<li> <%= author.email %> </li>
+<% if logged_in? %>
+	<%= link_to "delete", author_path(@author), method: :delete, data: {confirm: "Do you want to delete the author?"} %>
+<% end %>
+<% end %>
+</ul>
+</div>

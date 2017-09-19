@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blogger1</title>
+    <title>Jogooletters</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="layout-two-column-left" >
+  <div class='image_top'> <%= image_tag "air-mail1.jpg", id: 'image_top'%> </div>
+<div id="top-nav">
+ <div class="blogname">
+<a href="/">
+<h1>Jogoo letters</h1>
+<h5 id="catch">My Head in my Fingers</h5>
+</a>
+</div>
+<ul>
+  <li>
+    <%= link_to "Home", root_path %>
+    <%= link_to "All articles", articles_path %>
+    <%= link_to "Tags", tags_path %>
+    <% if logged_in? %>
+    <%= link_to "Authors", authors_path %>
+      <% end %>
+    </li>
+ </ul>
+
+ </div>
+    <br class="clear"> 
   	<p class="flash"><%= flash.notice %></p>
-    <div id="container">
-      <div id="content">
+     <div class="container">
+      <div class="content"> 
         <%= yield %>
-        <hr>
+
+      </div>
+    </div>
+    <br class="clear">
+    
+    <div class="footer"> 
         <h6>
           <% if logged_in? %>
             <%= "Logged in as #{current_user.email}" %>
@@ -23,9 +49,8 @@
              Logged out
             <% end %>
         </h6>
-      </div>
-    </div>
-    <div class= "navigation">
-      <%= render partial: 'articles/nav' %>    </div>
+     </div>
+    
+    
   </body>
 </html>

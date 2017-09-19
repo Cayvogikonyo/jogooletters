@@ -17,6 +17,7 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
+    @author = Author.all
   end
 
   # GET /authors/new
@@ -66,6 +67,10 @@ class AuthorsController < ApplicationController
       format.html { redirect_to authors_url, notice: 'Author was successfully destroyed.' }
       format.json { head :no_content }
     end
+
+  flash.notice = "Author Deleted"
+
+  redirect_to authors_path
   end
 
   private
