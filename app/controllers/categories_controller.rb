@@ -12,6 +12,9 @@ def index
   @articles = Article.order(created_at: :desc).limit(5)
   
 end
+def edit
+	@category = Category.find(params[:id])
+end
 
 def new
 	@category = Category.new
@@ -32,5 +35,13 @@ def destroy
 	flash.notice = "Category Deleted"
 
 	redirect_to action: "index" 
+end
+def update
+	@category = Category.find(params[:id])
+	@category.update(category_params)
+
+	flash.notice = "Your Category has Been Updated"
+
+	redirect_to category_path(@category)
 end
 end

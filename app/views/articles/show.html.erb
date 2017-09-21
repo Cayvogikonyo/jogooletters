@@ -21,6 +21,11 @@
 	<% end %>
 </div>
 <p><%= simple_format @article.body %></p>
+
+
+<p class="article-time">
+  <%= @article.created_at.strftime("%B %d %Y, %l:%M%P") %>
+</p>
 <p id='tags'>
 	Tags:
 	<% @article.tags.each do |tag| %>
@@ -29,15 +34,18 @@
 	</div>
 	<% end %>
 </p>
+<div class="article-comment">
 <%= render partial: 'articles/comment' , collection: @article.comments %>
 <%= render partial: 'comments/form' %>
-
+</div>
  <!--<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div><br> --> 
 <% if logged_in? %>
-<%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Do you want to delete the article?"} %>
-<%= link_to "edit", edit_article_path(@article) %>
+<%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Do you want to delete the article?"}, id: 'article-show-link' %>
+<%= link_to "edit", edit_article_path(@article), id: 'article-show-link' %>
 <% end %>
+<div class="share_icons">
 <%= social_share_button_tag("#{@article.title}") %>
+</div>
 <%= link_to "<<Back to Articles List", articles_path %><br>
 </div>
 </div>

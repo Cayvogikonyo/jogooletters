@@ -3,12 +3,20 @@
   <head>
     <title>Jogooletters</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class="layout-two-column-left" >
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
   <div class='image_top'> <%= image_tag "air-mail1.jpg", id: 'image_top'%> </div>
 <div id="top-nav">
  <div class="blogname">
@@ -30,15 +38,16 @@
 
  </div>
     <br class="clear"> 
-  	<p class="flash"><%= flash.notice %></p>
      <div class="container">
+     <p class="flash"><%= flash.notice %></p>
       <div class="content"> 
         <%= yield %>
 
       </div>
     </div>
     <br class="clear">
-    
+    <div class="fb-follow" data-href="http://localhost:3000/articles/7#" data-width="50" data-height="27" data-layout="standard" data-size="small" data-show-faces="true"></div>
+   <div class="fb-follow" data-href="https://www.facebook.com/zuck" data-layout="standard" data-size="small" data-show-faces="true"></div>
     <div class="footer"> 
         <h6>
           <% if logged_in? %>

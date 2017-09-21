@@ -66,3 +66,54 @@ div.alpha-inner{
 	clear: left;
 }
 
+@media only screen and (min-device-width : 320px) and (max-device-width: 480px){
+  
+  div#category_1{
+	clear: both;
+	background: url(updated.jpg) no-repeat;
+  	height: 170px;
+	max-width: 480px;
+	min-width: 320px;
+	padding-left: 192px;
+	box-sizing: border-box;
+	box-shadow: inset -256px 0 32px 7px #F1F1F1;
+}
+div#category_2{
+	background: url(politics.jpg) no-repeat;
+	background-position: right;
+  	height: 170px;
+	max-width: 480px;
+	min-width: 320px;
+	padding-right: 192px;
+	box-sizing: border-box;
+	box-shadow: inset 160px 0 32px 7px #F1F1F1;
+}
+div#category_3{
+	clear: both;
+	background: url(narratives.jpg) no-repeat;
+  	height: 170px;
+	max-width: 480px;
+	min-width: 320px;
+	padding-left: 192px;
+	box-sizing: border-box;
+	box-shadow: inset -288px 0 32px 7px #F1F1F1;
+}
+div#category_4{
+	background: url(Reallife.jpg) no-repeat;
+	background-position: right;
+  	height: 170px;
+	max-width: 480px;
+	min-width: 320px;
+	padding-right: 192px;
+	box-sizing: border-box;
+	box-shadow: inset 256px 0 32px 7px #F1F1F1;
+}
+div.recent-articles {
+	float: none;
+	position: relative;
+	max-width: 250px;
+}
+div.alpha-inner{
+	clear: none;
+}
+}
