@@ -674,8 +674,11 @@ div.image_top{
 div#post-archive{
   float: none;
   clear: none;
+  border: 1px solid #000;
+  border-radius:3px;
   text-align: justify;
   padding-right: 8px;
+  width:auto;
 }
 h5#catch{
   display: inline;
