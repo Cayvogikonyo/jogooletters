@@ -13,12 +13,21 @@
 </div>
 <div id="post-archive">
 <h3>Article archive</h3>
+
+ <ul class="list">
   <% @articles_by_month.each do |month, articles| %>
-    <h4><%=link_to "#{month.strftime('%B %Y')} (#{articles.count}):" %></h4>
-   <ul>
-     <% for article in articles %>
+  
+    <li>
+   <a><%="#{month.strftime('%B %Y')} (#{articles.count}):" %></a>
+    <ul>
+        <% for article in articles %>
+      
        <li><%= link_to article.title, article_path(article) %></li>
+       
      <% end %>
-   </ul>
+      </ul>
+   </li>
+  
   <% end %>
+   </ul>
 </div>

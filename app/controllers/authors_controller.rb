@@ -17,7 +17,7 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
-    @author = Author.all
+    @author = Author.find(params[:id])
   end
 
   # GET /authors/new
@@ -70,7 +70,7 @@ class AuthorsController < ApplicationController
 
   flash.notice = "Author Deleted"
 
-  redirect_to authors_path
+  redirect_to action: "index" 
   end
 
   private
