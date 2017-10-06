@@ -20,7 +20,7 @@
 		<%= image_tag @article.image.url, class: 'article_image' %><br>
 	<% end %>
 </div>
-<p><%= simple_format @article.body %></p>
+<p><%= @article.body.html_safe %></p>
 
 
 <p class="article-time">
@@ -35,13 +35,15 @@
 	<% end %>
 </p>
 <div class="article-comment">
-<%= render partial: 'articles/comment' , collection: @article.comments %>
-<%= render partial: 'comments/form' %>
+<!--<%= render partial: 'articles/comment' , collection: @article.comments %>
+<%= render partial: 'comments/form' %>-->
+<div class="fb-comments" expr:href='data:article.url' data-numposts="5"></div>
+
 </div>
  <!--<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div><br> --> 
 <% if logged_in? %>
-<%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Do you want to delete the article?"}, id: 'article-show-link' %>
-<%= link_to "edit", edit_article_path(@article), id: 'article-show-link' %>
+<%= link_to "Delete Article", article_path(@article), method: :delete, data: {confirm: "Do you want to delete the article?"}, id: 'article-show-link' %>
+<%= link_to "Edit Article", edit_article_path(@article), id: 'article-show-link' %>
 <% end %>
 <div class="share_icons">
 <%= social_share_button_tag("#{@article.title}") %>

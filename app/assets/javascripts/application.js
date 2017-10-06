@@ -19,6 +19,3 @@
 //= require_tree .
 //= require_tree .
 
-$(".list > li a").click(function() {
-    $(this).parent().find('ul').toggle();
-});

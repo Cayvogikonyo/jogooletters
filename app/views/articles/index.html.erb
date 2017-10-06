@@ -3,7 +3,15 @@
 <ul id='articles'>
 	<% @articles.each do |article| %>
 		<li>
-			<%= link_to article.title, article_path(article), class: 'article_title' , id: "article_#{article.id}" %>
+      <div id="article-holder">
+      <div class="article-holder">
+        <h4><%= article.title %></h4>
+        <p><%= simple_format article.body %></p>
+      </div>
+      <div class="show-more">
+			<%= link_to 'Show more', article_path(article) %>
+    </div>
+  </div>
 		</li>
 	<% end %>
 </ul>

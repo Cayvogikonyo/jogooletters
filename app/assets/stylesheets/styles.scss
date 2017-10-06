@@ -2,13 +2,33 @@ $primary_color: #AAA;
 
 body {/*
   background: radial-gradient(circle, black, #57A771);*/
-      background-color: #960907;
-      margin-top: 0px;
-  font: {
-    family: Verdana, Helvetica, Arial;
-    size: 16px;
+      margin: 0px;
+      padding: 0px;
+    font-family: Verdana, Helvetica, Arial;
+    font-size: 16px;
+   
   }
+
+* {
+  margin: 0;
+  padding: 0;
 }
+
+html, body {
+   margin: 0px;
+   width: 100%;
+   height: 100%;
+}
+
+.capsule {
+background-color: #960907;
+min-height: 100%;
+  
+}
+#main {
+  overflow: auto;
+  }
+
  h1{
   text-shadow:#030e19 0px 1px 1px;
   text-align: center;
@@ -49,12 +69,15 @@ a {
   clear: both;
   padding-top: 20px;
   overflow: hidden;
+  min-height: 100%;
 
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 80%;
   background: #f1f1f1;
+  overflow: auto;
+ 
   margin: 0 auto;
   }
 .articles-list{
@@ -62,7 +85,7 @@ a {
   text-align: center;
   font-weight: 900;
   font-color: #2F4E6C;
-  width: 705px;
+  max-width: 705px;
   text-align: left;
   position: relative;
   float: left;
@@ -86,6 +109,7 @@ a {
   margin-right:20px;
   font-size:1.2em;
   position:relative;
+  list-style-type: none;
   }
 .beta {
   max-width: 705px;
@@ -98,6 +122,37 @@ a {
   clear: right !important;
   }
 
+.bio {
+  padding-top: 25px;
+  float: right;
+  width: 80.5%;
+  clear: right;
+}
+.bio p {
+  padding: 0;
+  margin: 0;
+}
+
+.author-profile {
+  max-width: 900px;
+  clear: both;
+  display: block;
+}
+
+.gravatar {
+  float: left;
+  display: inline-block;
+  padding:10px;
+  border-radius: 7px;
+  width: 13.3%;
+  clear: left;
+}
+
+.gravatar img{
+  border-radius:12px;
+
+}
+
 .alpha {
   
   }
@@ -106,10 +161,9 @@ a {
   width: 100%;
   margin: 0px 0px 0px 0px;
   padding: 20px 0;
-  background-image: none;
-  background-position: bottom right;
-  background-repeat: no-repeat;
+  position: relative;
   overflow: hidden;
+  clear: both;
   background: #373737;
 }
 .alpha-inner {
@@ -316,6 +370,10 @@ a.new_article, a.new_category, a.new-author{
   border-radius: 15px;
   padding: 5px;
 }
+
+#follow-button {
+  background-color: rgb(55, 55, 55);
+}
 .article-image-left{
   float: left;
   border-radius: 15px;
@@ -502,11 +560,31 @@ div.image_top{
   width: 120px;
   height: 99px;
   position: relative;
+  margin-left: 7px;
   z-index: 100;
   background-size: contain;
   border-image-repeat: initial;
-
 }
+.image_top p{
+  z-index: 100;
+  color: #fff;
+}
+
+.fb-follow{
+  float: left;
+  clear: left;
+  width: 25%;
+  padding-top: 17px;
+  padding-left: 10px;
+}
+
+.twitter-follow{
+  float: right;
+  clear: right;
+  width: 72%;
+  padding-top: 17px;
+}
+
 img#image_top{
   width: 100%;
   height: 100%;
@@ -599,11 +677,110 @@ div#post-archive{
   padding-left:25px;
 }
 
+.article-holder {
+  max-height: 600px;
+  overflow: hidden;
+  font-weight: 300;
+  font-size: .6em;
+ 
+  
+}
 
+.show-more{
+  text-align: right;
+}
+.show-more a{
+  text-decoration-line: none;
+  color: #2F4E6C;
+  font-style: italic;
+  font-size: .5em !important;
+  font-weight: 700; 
+}
+
+#article-holder{
+  padding:20px 0px;
+   background-color: #fff;
+   border-radius: 9px;
+}
+
+.follow-buttons{
+  float: left;
+  clear: left;
+  width: 49.5%;
+}
+
+.follow-buttons p{
+  width: auto;
+  margin: 0;
+  color: #f1f1f1;
+}
+
+.logger{
+  float: right;
+  clear: right;
+  text-align: right;
+  border-left: solid 1px #f1f1f1;
+  width: 50%;
+}
+
+.logger h6{
+  margin-top: 49.5px;
+  margin-bottom: 0;
+  padding-right: 13px;
+}
 /* css for smartphones */
 
 @media only screen and (min-device-width : 320px) and (max-device-width: 480px){
   
+
+.article-holder {
+  max-height: 400px;
+  overflow: hidden;
+  font-weight: 300;
+  font-size: 19px;
+  
+}
+
+.fb-follow{
+  float: left;
+  clear: left;
+  width: 47%;
+  padding-top: 17px;
+ 
+}
+
+.twitter-follow{
+  float: right;
+  clear: right;
+  width: 46%;
+  padding-top: 15px;
+ 
+}
+
+
+.bio {
+  padding-top: 5px;
+  float: none;
+  width: 100%;
+  clear: none;
+  text-align: center; 
+}
+
+.author-profile {
+  max-width: 480px;
+  clear: both;
+  display: block;
+}
+
+.gravatar {
+  margin: auto;
+  float: none;
+  width: 100%;
+  display: inline-block;
+  padding:10px;
+  text-align: center;
+  border-radius: 7px;
+}
 
 .content {
   clear: none;
@@ -613,6 +790,7 @@ div#post-archive{
   max-width: 480px;
   background: #f1f1f1;
   margin: 0 auto;
+  margin-left: 3px;
   margin-right: 3px;
   margin-top:18px;
 
@@ -709,12 +887,12 @@ margin-left: 3px; padding-top: 12px;}
   }
 body {
   width:480px;
-  margin: 2px;
-  margin-right: 8px;
   font-size:19px;
+  min-height: 100%;
 }
 html {
-  max-width: 100%;
+ 
+  min-height: 100%;
   display: inline;
 }
 div.image_top{
@@ -740,13 +918,58 @@ h5#catch{
   border-left: solid 2px #fff;
   padding-left: 3px;
   }
+
+ul#articles{
+  padding-left: 10px;
+}
 }
 
-
-
 @media (min-width: 1024px) {
+   #top-nav ul {
+  list-style: none;
+  width: 500px;
+  }
+}
+@media (max-width: 1200){
+   .beta{
+  max-width: 690px;
+  min-width: 550px;
+}
+
+}
+@media (min-width: 1500px) {
  #top-nav ul {
   list-style: none;
   width: 500px;
   }
+
+
+.beta {
+  min-width: 75%;
+}
+
+.recent-articles{
+  min-width: 20%;
+}
+div#recent-articles{
+  min-width: 100%;
+}
+.articles-list{
+  min-width: 70%;
+}
+.article-holder{
+  max-height: 800px;
+  font-size: 28px;
+}
+#post-archive{
+  min-width: 25%;
+  font-size: 25px;
+}
+.article-content{
+  min-width: 70%;
+  font-size: 28px;
+}
+.beta-inner{
+  max-width: 80%;
+}
 }

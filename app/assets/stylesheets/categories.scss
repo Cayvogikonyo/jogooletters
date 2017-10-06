@@ -57,6 +57,7 @@ div#category_4{
 	padding-top: 15px;
 	padding-bottom: 15px;
 	margin-bottom:30px;
+	margin-top: 30px;
 }
 p.top {
     vertical-align: text-top;
@@ -198,4 +199,11 @@ a span{
    background: rgba(0, 0, 0, 0.7);
    padding: 10px; 
 }
+}
+
+@media (min-width: 1500px) {
+
+	#category_1, #category_2, #category_3, #category_4 {
+		min-height: 400px;
+	}
 }
